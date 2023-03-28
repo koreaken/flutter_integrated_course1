@@ -8,21 +8,31 @@ import '../home_screen.dart';
 class SplashScreen extends StatefulWidget {
   static String get routeName => 'splash';
 
-  const SplashScreen({Key? key}) : super(key: key);
+  final bool isGoRouterNavi;
+
+  const SplashScreen({
+    this.isGoRouterNavi = false,
+    Key? key,
+  }) : super(key: key);
 
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-
   @override
   void initState() {
     super.initState();
 
     Timer(
       const Duration(seconds: 1),
-      () => context.goNamed(HomeScreen.routeName),
+      () => {
+        if (widget.isGoRouterNavi) {
+          context.goNamed(HomeScreen.routeName),
+        } else {
+          Navigator.of(context).popAndPushNamed('/${HomeScreen.routeName}'),
+        }
+      },
     );
   }
 
@@ -48,4 +58,3 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
-

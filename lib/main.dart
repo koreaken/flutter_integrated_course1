@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
 
-import 'common/go_router.dart';
+import 'view/screen/buttons/buttons.dart';
+import 'view/screen/const_constructor/const_constructor_screen.dart';
+import 'view/screen/dday/dday_screen.dart';
+import 'view/screen/home_screen.dart';
+import 'view/screen/image_carousel/image_carousel_screen.dart';
+import 'view/screen/navigation/navigation_one_screen.dart';
+import 'view/screen/navigation/navigation_screen.dart';
+import 'view/screen/navigation/navigation_three_screen.dart';
+import 'view/screen/navigation/navigation_two_screen.dart';
+import 'view/screen/random_num/random_num_generator_screen.dart';
+import 'view/screen/row_column/row_column_screen.dart';
+import 'view/screen/splash/splash_screen.dart';
+import 'view/screen/statefulwidget/stateful_widget_root.dart';
+import 'view/screen/webview/webview_screen.dart';
 
 void main() {
   // Flutter 프레임워크가
@@ -14,35 +27,29 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp.router(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-        fontFamily: 'sunflower',
-        textTheme: const TextTheme(
-          displayLarge: TextStyle(
-            fontFamily: 'parisienne',
-            fontSize: 80.0,
-          ),
-          displayMedium: TextStyle(
-            fontWeight: FontWeight.w700,
-            fontSize: 50.0,
-          ),
-          bodyLarge: TextStyle(
-            fontSize: 30.0,
-          ),
-          bodyMedium: TextStyle(
-            fontSize: 20.0,
-          ),
-        ),
-      ),
-      debugShowCheckedModeBanner: true,
-      routerConfig: goRouter,
+    return MaterialApp(
+      initialRoute: '/',
+      // www.google.com -> www.google.com/
+      routes: {
+        '/': (context) => const SplashScreen(),
+        '/${HomeScreen.routeName}': (context) => HomeScreen(),
+        '/${RowColumnScreen.routeName}': (context) => const RowColumnScreen(),
+        '/${WebViewScreen.routeName}': (context) => WebViewScreen(),
+        '/${StatefulWidgetRoot.routeName}': (context) => const StatefulWidgetRoot(),
+        '/${ImageCarouselScreen.routeName}': (context) => const ImageCarouselScreen(),
+        '/${DdayScreen.routeName}': (context) => const DdayScreen(),
+        '/${ConstConstructorScreen.routeName}': (context) => const ConstConstructorScreen(),
+        '/${RandomNumGeneratorScreen.routeName}': (context) => const RandomNumGeneratorScreen(),
+        '/${ButtonsScreen.routeName}': (context) => const ButtonsScreen(),
+        '/${NavigationScreen.routeName}': (context) => const NavigationScreen(),
+        '/${NavigationOneScreen.routeName}': (context) => const NavigationOneScreen(),
+        '/${NavigationTwoScreen.routeName}': (context) => const NavigationTwoScreen(),
+        '/${NavigationThreeScreen.routeName}': (context) => const NavigationThreeScreen(),
+      },
     );
   }
 }

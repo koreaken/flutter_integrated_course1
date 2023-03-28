@@ -4,7 +4,7 @@ Integrated code from Codefactory's Flutter course 1
 
 ----------
 ## 개요
-인프런 플러터 강의 - [코드팩토리] [초급] Flutter 수강 완료 후 통합 & 코드 리팩토링
+인프런 플러터 강의 - [코드팩토리] [초급] Flutter 수강 완료 후 코드 통합 & 리팩토링
 
 참조 링크
 1. 강의 주소 - https://www.inflearn.com/course/플러터-프로젝트
@@ -21,7 +21,7 @@ Integrated code from Codefactory's Flutter course 1
 + https://github.com/codefactory-co/flutter-lv1-theory-navigation.git
 ----------
 ## 강의 주요 내용
-Flutter 3.0 & 10개 프로젝트 진행
+Flutter 3.0 & 10개 프로젝트
 + Dart언어 마스터하기
 + Flutter로 예쁜 UI 제작하기
 + SQLite 데이터베이스 활용하기
@@ -39,19 +39,24 @@ Flutter 3.0 & 10개 프로젝트 진행
     + > headline1, headline2, bodyText1, bodyText2, primary, onPrimary 등
   + to be
     + > displayLarge, displayMediumm, bodyLarge, bodyMedium, background, foreground 등
++ gitignore 개선
 
-+ gitignore 
 ----------
 ## 각 챕터 별 주요 기능
 ### 0. Home Screen
-+ 
+
 + 각 챕터 별 코드를 한 화면에 통합하여 앱 내에서 확인 가능하도록 구현
-+ go_router
+
++ Navigator
+  + main.dart 빌드 - Router 기본 적용
+  + gorouter_main 빌드 - GoRouter 적용
 ----------
 ### 1. Splash Screen
 
 + Asset & Image
 + Circular Progress Indicator 위젯
++ Timer
++ Navigator / popAndPushNamed
 ----------
 ### 2. Row Column Screen
 
@@ -92,13 +97,13 @@ Flutter 3.0 & 10개 프로젝트 진행
 ----------
 ### 6. const 선언 + Constructor
 
-const 선언에 따른 lifecycle
++ const 선언에 따른 lifecycle
 ----------
 ### 7. Random Number Generator
    
 + Random()
 + Navigation - Navigator.of() & MaterialPageRoute
-  + push / pop
+  + push / pop 
   + 데이터 전달 & async & await 
 + Slider 위젯
 + Functional 프로그래밍을 활용한 위젯 렌더링 및 코드정리
@@ -106,14 +111,20 @@ const 선언에 따른 lifecycle
 ### 8. Buttons
 
 + ElevatedButton
-  + ButtonStyle
-    + MaterialStateProperty
-      + all
-      + resolveWith
-        + MaterialState
-          + hovered / focused / pressed / dragged
-          + selected / scrollUnder / disabled / error
   + styleFrom
+  + ButtonStyle & MaterialStateProperty
+      + all
+      + resolveWith & MaterialState
 + OutlinedButton
 + TextButton
 ----------
+### 9. Navigation
+
++ Navigation & Stack
+  + Navigator.of()
+    + push / pushNamed / pushReplacement / pushNameAndRemoveUntil
+    + pop / canPop / maybePop
+    + argument 데이터 전달
+      + MaterialPageRoute & RouteSettings
+      + ModalRoute & settings.arguments
++ 공통 layout

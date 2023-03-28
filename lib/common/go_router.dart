@@ -5,6 +5,10 @@ import '../view/screen/const_constructor/const_constructor_screen.dart';
 import '../view/screen/dday/dday_screen.dart';
 import '../view/screen/home_screen.dart';
 import '../view/screen/image_carousel/image_carousel_screen.dart';
+import '../view/screen/navigation/navigation_one_screen.dart';
+import '../view/screen/navigation/navigation_screen.dart';
+import '../view/screen/navigation/navigation_three_screen.dart';
+import '../view/screen/navigation/navigation_two_screen.dart';
 import '../view/screen/random_num/random_num_generator_screen.dart';
 import '../view/screen/row_column/row_column_screen.dart';
 import '../view/screen/splash/splash_screen.dart';
@@ -20,12 +24,12 @@ List<GoRoute> get routes => [
       GoRoute(
         path: '/${SplashScreen.routeName}',
         name: SplashScreen.routeName,
-        builder: (context, state) => const SplashScreen(),
+        builder: (context, state) => const SplashScreen(isGoRouterNavi: true),
       ),
       GoRoute(
         path: '/',
         name: HomeScreen.routeName,
-        builder: (context, state) => HomeScreen(),
+        builder: (context, state) => HomeScreen(isGoRouterNavi: true),
         routes: [
           GoRoute(
             path: RowColumnScreen.routeName,
@@ -67,6 +71,32 @@ List<GoRoute> get routes => [
             name: ButtonsScreen.routeName,
             builder: (context, state) => const ButtonsScreen(),
           ),
-        ]
+          GoRoute(
+            path: NavigationScreen.routeName,
+            name: NavigationScreen.routeName,
+            builder: (context, state) => const NavigationScreen(),
+            routes: [
+              GoRoute(
+                path: NavigationOneScreen.routeName,
+                name: NavigationOneScreen.routeName,
+                builder: (context, state) => const NavigationOneScreen(),
+                routes: [
+                  GoRoute(
+                    path: NavigationTwoScreen.routeName,
+                    name: NavigationTwoScreen.routeName,
+                    builder: (context, state) => const NavigationTwoScreen(),
+                    routes: [
+                      GoRoute(
+                        path: NavigationThreeScreen.routeName,
+                        name: NavigationThreeScreen.routeName,
+                        builder: (context, state) => const NavigationThreeScreen(),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ],
       ),
     ];
