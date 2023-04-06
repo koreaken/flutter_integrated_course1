@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
-import 'package:integrated_course1/view/screen/home_screen.dart';
 import 'package:integrated_course1/view/screen/navigation/navigation_one_screen.dart';
 
 import '../../layout/navigation_main_layout.dart';

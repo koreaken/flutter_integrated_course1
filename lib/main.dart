@@ -13,6 +13,7 @@ import 'view/screen/random_num/random_num_generator_screen.dart';
 import 'view/screen/row_column/row_column_screen.dart';
 import 'view/screen/splash/splash_screen.dart';
 import 'view/screen/statefulwidget/stateful_widget_root.dart';
+import 'view/screen/video_player/video_player_screen.dart';
 import 'view/screen/webview/webview_screen.dart';
 
 void main() {
@@ -35,6 +36,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       // www.google.com -> www.google.com/
       routes: {
+        // route 구조 /a/b가 맞지만, 여기서는 심플하게 일괄 /a 적용
         '/': (context) => const SplashScreen(),
         '/${HomeScreen.routeName}': (context) => HomeScreen(),
         '/${RowColumnScreen.routeName}': (context) => const RowColumnScreen(),
@@ -49,6 +51,7 @@ class MyApp extends StatelessWidget {
         '/${NavigationOneScreen.routeName}': (context) => const NavigationOneScreen(),
         '/${NavigationTwoScreen.routeName}': (context) => const NavigationTwoScreen(),
         '/${NavigationThreeScreen.routeName}': (context) => const NavigationThreeScreen(),
+        '/${VideoPlayerScreen.routeName}': (context) => const VideoPlayerScreen(),
       },
     );
   }

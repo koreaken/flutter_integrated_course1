@@ -8,8 +8,8 @@ import 'image_carousel/image_carousel_screen.dart';
 import 'navigation/navigation_screen.dart';
 import 'random_num/random_num_generator_screen.dart';
 import 'row_column/row_column_screen.dart';
-import 'splash/splash_screen.dart';
 import 'statefulwidget/stateful_widget_root.dart';
+import 'video_player/video_player_screen.dart';
 import 'webview/webview_screen.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -27,6 +27,7 @@ class HomeScreen extends StatelessWidget {
     RandomNumGeneratorScreen.routeName: 'Random Number Generator Screen',
     ButtonsScreen.routeName: 'Buttons Screen',
     NavigationScreen.routeName: 'Navigation Screen',
+    VideoPlayerScreen.routeName: 'Video Player Screen',
     // '동영상 플레이어',
     // '오늘도 출근',
     // 'LIVE - 영상통화',

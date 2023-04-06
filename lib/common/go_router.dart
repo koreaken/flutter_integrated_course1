@@ -13,6 +13,7 @@ import '../view/screen/random_num/random_num_generator_screen.dart';
 import '../view/screen/row_column/row_column_screen.dart';
 import '../view/screen/splash/splash_screen.dart';
 import '../view/screen/statefulwidget/stateful_widget_root.dart';
+import '../view/screen/video_player/video_player_screen.dart';
 import '../view/screen/webview/webview_screen.dart';
 
 final GoRouter goRouter = GoRouter(
@@ -89,7 +90,8 @@ List<GoRoute> get routes => [
                       GoRoute(
                         path: NavigationThreeScreen.routeName,
                         name: NavigationThreeScreen.routeName,
-                        builder: (context, state) => const NavigationThreeScreen(),
+                        builder: (context, state) =>
+                            const NavigationThreeScreen(),
                       ),
                     ],
                   ),
@@ -97,6 +99,11 @@ List<GoRoute> get routes => [
               ),
             ],
           ),
+          GoRoute(
+            path: VideoPlayerScreen.routeName,
+            name: VideoPlayerScreen.routeName,
+            builder: (context, state) => const VideoPlayerScreen(),
+          )
         ],
       ),
     ];

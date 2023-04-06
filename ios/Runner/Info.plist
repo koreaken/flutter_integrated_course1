@@ -47,7 +47,7 @@
 	<true/>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
-	<!-- start > http setting -->
+	<!-- start - http setting -->
     <key>NSAppTransportSecurity</key>
     <dict>
         <key>NSAllowsLocalNetworking</key>
@@ -55,6 +55,14 @@
         <key>NSAllowsArbitraryLoadsInWebContent</key>
         <true/>
     </dict>
-    <!-- end > http setting -->
+    <!-- end - http setting -->
+    <!-- start - image picker -->
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>사진첩 권한을 허가해주세요.</string>
+    <key>NSCameraUsageDescription</key>
+    <string>카메라 권한을 허가해주세요.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>마이크 권한을 허가해주세요.</string>
+    <!-- end - image picker -->
 </dict>
 </plist>

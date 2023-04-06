@@ -19,6 +19,7 @@ Integrated code from Codefactory's Flutter course 1
 + https://github.com/codefactory-co/flutter-lv1-project-random-number-generator.git      
 + https://github.com/codefactory-co/flutter-lv1-theory-buttons.git
 + https://github.com/codefactory-co/flutter-lv1-theory-navigation.git
++ https://github.com/codefactory-co/flutter-lv1-project-video-player.git
 ----------
 ## 강의 주요 내용
 Flutter 3.0 & 10개 프로젝트
@@ -32,14 +33,16 @@ Flutter 3.0 & 10개 프로젝트
 ----------
 ## 리팩토링 내역
 + 각 챕터 별 분리된 프로젝트를 프로젝트 하나에서 확인 가능하도록 구현
-+ 저작권 이미지를 무료 이미지 대체
 + 최신 버전 상향
++ gitignore 개선
 + deprecated 개선
   + as is
     + > headline1, headline2, bodyText1, bodyText2, primary, onPrimary 등
   + to be
     + > displayLarge, displayMediumm, bodyLarge, bodyMedium, background, foreground 등
-+ gitignore 개선
++ 저작권 이미지를 무료 이미지 대체
++ error 개서 
+  + video player > dispose 후 setState 사용 error 개선
 
 ----------
 ## 각 챕터 별 주요 기능
@@ -128,3 +131,13 @@ Flutter 3.0 & 10개 프로젝트
       + MaterialPageRoute & RouteSettings
       + ModalRoute & settings.arguments
 + 공통 layout
+----------
+### 10. Video Player
+
++ libraries
+  + video_player
+  + image_picker
++ Stack 위젯
++ AspectRatio 위젯
++ Slider 위젯
++ Custom Video Controller
