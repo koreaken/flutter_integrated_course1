@@ -44,6 +44,7 @@ Flutter 3.0 & 10개 프로젝트
 + Google Map
   + API Key 정보는 ignore 관련 숨김 배포
   + ActionBar 
++ FutureBuilder & StreamBuilder 코드 분리
 + error 개선
   + video player > dispose 후 setState 사용 error 개선
 ----------
@@ -156,6 +157,16 @@ Flutter 3.0 & 10개 프로젝트
 + AlertDialog 위젯
 + AppBar Icon
 ----------
+### 11. Future & Stream Builder
++ FutureBuilder
++ StreamBuilder
++ data caching & loading
++ snapshot
+  + .connectionState : none / waiting / active / done
+  + .data
+  + .error
+
+----------
 ### 참조 링크
 
 1. 강의 주소 - https://www.inflearn.com/course/플러터-프로젝트
@@ -172,3 +183,4 @@ Flutter 3.0 & 10개 프로젝트
 + https://github.com/codefactory-co/flutter-lv1-theory-navigation.git
 + https://github.com/codefactory-co/flutter-lv1-project-video-player.git
 + https://github.com/codefactory-co/flutter-lv1-project-chool-check.git
++ https://github.com/codefactory-co/flutter-lv1-theory-future-and-stream-builder.git

@@ -58,6 +58,11 @@ class _ChoolCheckScreenState extends State<ChoolCheckScreen> {
       body: FutureBuilder(
         future: checkPermission(),
         builder: (BuildContext context, AsyncSnapshot snapshot) {
+          // ConnectionState.waiting 으로 로딩을 진행하면 전체 화면에서 새로고침하듯 로딩되는 코드이지만,
+          // FutureBuilder 캐싱을 이용한다면
+          // if (!snapshot.hasData) { ... }
+          // 을 사용하여 초기 화면에만 전체 화면 로딩을 적용하고
+          // 새로고침 로딩은 부분 화면에서 적용하는 게 올바르다.
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
               child: CircularProgressIndicator(),

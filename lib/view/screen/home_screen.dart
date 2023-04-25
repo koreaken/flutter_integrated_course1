@@ -5,6 +5,7 @@ import 'buttons/buttons.dart';
 import 'chool_check/chool_check_screen.dart';
 import 'const_constructor/const_constructor_screen.dart';
 import 'dday/dday_screen.dart';
+import 'future_stream/future_stream_screen.dart';
 import 'image_carousel/image_carousel_screen.dart';
 import 'navigation/navigation_screen.dart';
 import 'random_num/random_num_generator_screen.dart';
@@ -30,7 +31,7 @@ class HomeScreen extends StatelessWidget {
     NavigationScreen.routeName: 'Navigation Screen',
     VideoPlayerScreen.routeName: 'Video Player Screen',
     ChoolCheckScreen.routeName: '오늘도 출근 Screen',
-    // '오늘도 출근',
+    FutureBuilderScreen.routeName: 'Future & Stream Builder Screen',
     // 'LIVE - 영상통화',
     // '캘린더 스케쥴러',
     // '미세먼지 앱',

@@ -4,6 +4,7 @@ import '../view/screen/buttons/buttons.dart';
 import '../view/screen/chool_check/chool_check_screen.dart';
 import '../view/screen/const_constructor/const_constructor_screen.dart';
 import '../view/screen/dday/dday_screen.dart';
+import '../view/screen/future_stream/future_stream_screen.dart';
 import '../view/screen/home_screen.dart';
 import '../view/screen/image_carousel/image_carousel_screen.dart';
 import '../view/screen/navigation/navigation_one_screen.dart';
@@ -109,7 +110,12 @@ List<GoRoute> get routes => [
             path: ChoolCheckScreen.routeName,
             name: ChoolCheckScreen.routeName,
             builder: (context, state) => const ChoolCheckScreen(),
-          )
+          ),
+          GoRoute(
+            path: FutureBuilderScreen.routeName,
+            name: FutureBuilderScreen.routeName,
+            builder: (context, state) => const FutureBuilderScreen(),
+          ),
         ],
       ),
     ];

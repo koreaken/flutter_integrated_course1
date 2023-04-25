@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:integrated_course1/view/screen/future_stream/future_stream_screen.dart';
 
 import 'view/screen/buttons/buttons.dart';
 import 'view/screen/chool_check/chool_check_screen.dart';
@@ -54,6 +55,7 @@ class MyApp extends StatelessWidget {
         '/${NavigationThreeScreen.routeName}': (context) => const NavigationThreeScreen(),
         '/${VideoPlayerScreen.routeName}': (context) => const VideoPlayerScreen(),
         '/${ChoolCheckScreen.routeName}': (context) => const ChoolCheckScreen(),
+        '/${FutureBuilderScreen.routeName}': (context) => const FutureBuilderScreen(),
       },
     );
   }
