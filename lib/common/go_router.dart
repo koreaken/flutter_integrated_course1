@@ -1,6 +1,7 @@
 import 'package:go_router/go_router.dart';
 
 import '../view/screen/buttons/buttons.dart';
+import '../view/screen/chool_check/chool_check_screen.dart';
 import '../view/screen/const_constructor/const_constructor_screen.dart';
 import '../view/screen/dday/dday_screen.dart';
 import '../view/screen/home_screen.dart';
@@ -103,6 +104,11 @@ List<GoRoute> get routes => [
             path: VideoPlayerScreen.routeName,
             name: VideoPlayerScreen.routeName,
             builder: (context, state) => const VideoPlayerScreen(),
+          ),
+          GoRoute(
+            path: ChoolCheckScreen.routeName,
+            name: ChoolCheckScreen.routeName,
+            builder: (context, state) => const ChoolCheckScreen(),
           )
         ],
       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'view/screen/buttons/buttons.dart';
+import 'view/screen/chool_check/chool_check_screen.dart';
 import 'view/screen/const_constructor/const_constructor_screen.dart';
 import 'view/screen/dday/dday_screen.dart';
 import 'view/screen/home_screen.dart';
@@ -52,6 +53,7 @@ class MyApp extends StatelessWidget {
         '/${NavigationTwoScreen.routeName}': (context) => const NavigationTwoScreen(),
         '/${NavigationThreeScreen.routeName}': (context) => const NavigationThreeScreen(),
         '/${VideoPlayerScreen.routeName}': (context) => const VideoPlayerScreen(),
+        '/${ChoolCheckScreen.routeName}': (context) => const ChoolCheckScreen(),
       },
     );
   }

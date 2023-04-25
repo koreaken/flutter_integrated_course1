@@ -63,6 +63,13 @@
     <string>카메라 권한을 허가해주세요.</string>
     <key>NSMicrophoneUsageDescription</key>
     <string>마이크 권한을 허가해주세요.</string>
-    <!-- end - image picker -->
+    <!-- end - google map location permission -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>위치 정보가 필요합니다.</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>위치 정보가 필요합니다.</string>
+    <key>NSLocationUsageDescription</key>
+    <string>위치 정보가 필요합니다.</string>
+    <!-- end - google map location permission -->
 </dict>
 </plist>

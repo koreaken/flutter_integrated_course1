@@ -11,3 +11,44 @@ GeneratedPluginRegistrant.java
 key.properties
 **/*.keystore
 **/*.jks
+
+# Android Studio/IDEA
+*.iml
+.idea
+
+# IntelliJ .idea folder
+/.idea
+
+# Ignore gradle files
+build/
+
+
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+.externalNativeBuild
+.cxx
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+
+# built application files
+*.apk
+*.ap_
+*.aab
+output-metadata.json
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# generated files
+bin/
+gen/

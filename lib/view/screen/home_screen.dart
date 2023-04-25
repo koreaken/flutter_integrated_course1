@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import 'buttons/buttons.dart';
+import 'chool_check/chool_check_screen.dart';
 import 'const_constructor/const_constructor_screen.dart';
 import 'dday/dday_screen.dart';
 import 'image_carousel/image_carousel_screen.dart';
@@ -28,7 +29,7 @@ class HomeScreen extends StatelessWidget {
     ButtonsScreen.routeName: 'Buttons Screen',
     NavigationScreen.routeName: 'Navigation Screen',
     VideoPlayerScreen.routeName: 'Video Player Screen',
-    // '동영상 플레이어',
+    ChoolCheckScreen.routeName: '오늘도 출근 Screen',
     // '오늘도 출근',
     // 'LIVE - 영상통화',
     // '캘린더 스케쥴러',
