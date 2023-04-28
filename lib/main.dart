@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_config/flutter_config.dart';
 import 'package:integrated_course1/view/screen/future_stream/future_stream_screen.dart';
 
 import 'view/screen/buttons/buttons.dart';
@@ -19,12 +20,12 @@ import 'view/screen/video_call/video_call_screen.dart';
 import 'view/screen/video_player/video_player_screen.dart';
 import 'view/screen/webview/webview_screen.dart';
 
-void main() {
+void main() async {
   // Flutter 프레임워크가
   // 앱을 실행할 준비가 될때까지 기다린다.
   // runApp 하나만 실행하면 사용안해도 되지만, WebView 최신버전이나 db 등 사용하면 추가
   WidgetsFlutterBinding.ensureInitialized();
-
+  await FlutterConfig.loadEnvVariables();
   runApp(
     const MyApp(),
   );
