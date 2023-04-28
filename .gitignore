@@ -151,3 +151,6 @@ app.*.map.json
 
 # Google Map API
 Runner/Storage.swift
+
+# API KEY
+.env*

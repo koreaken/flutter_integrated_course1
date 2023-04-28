@@ -15,6 +15,7 @@ import '../view/screen/random_num/random_num_generator_screen.dart';
 import '../view/screen/row_column/row_column_screen.dart';
 import '../view/screen/splash/splash_screen.dart';
 import '../view/screen/statefulwidget/stateful_widget_root.dart';
+import '../view/screen/video_call/video_call_screen.dart';
 import '../view/screen/video_player/video_player_screen.dart';
 import '../view/screen/webview/webview_screen.dart';
 
@@ -115,6 +116,11 @@ List<GoRoute> get routes => [
             path: FutureBuilderScreen.routeName,
             name: FutureBuilderScreen.routeName,
             builder: (context, state) => const FutureBuilderScreen(),
+          ),
+          GoRoute(
+            path: VideoCallScreen.routeName,
+            name: VideoCallScreen.routeName,
+            builder: (context, state) => const VideoCallScreen(),
           ),
         ],
       ),

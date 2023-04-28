@@ -11,6 +11,7 @@ import 'navigation/navigation_screen.dart';
 import 'random_num/random_num_generator_screen.dart';
 import 'row_column/row_column_screen.dart';
 import 'statefulwidget/stateful_widget_root.dart';
+import 'video_call/video_call_screen.dart';
 import 'video_player/video_player_screen.dart';
 import 'webview/webview_screen.dart';
 
@@ -32,6 +33,7 @@ class HomeScreen extends StatelessWidget {
     VideoPlayerScreen.routeName: 'Video Player Screen',
     ChoolCheckScreen.routeName: '오늘도 출근 Screen',
     FutureBuilderScreen.routeName: 'Future & Stream Builder Screen',
+    VideoCallScreen.routeName: 'Video Call Screen',
     // 'LIVE - 영상통화',
     // '캘린더 스케쥴러',
     // '미세먼지 앱',

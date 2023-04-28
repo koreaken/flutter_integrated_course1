@@ -145,7 +145,7 @@ class _BottomPart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Image.asset(
-        'asset/img/flutter_logo.png',
+        'asset/img/logo_flutter.png',
       ),
     );
   }

@@ -15,6 +15,7 @@ import 'view/screen/random_num/random_num_generator_screen.dart';
 import 'view/screen/row_column/row_column_screen.dart';
 import 'view/screen/splash/splash_screen.dart';
 import 'view/screen/statefulwidget/stateful_widget_root.dart';
+import 'view/screen/video_call/video_call_screen.dart';
 import 'view/screen/video_player/video_player_screen.dart';
 import 'view/screen/webview/webview_screen.dart';
 
@@ -35,6 +36,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+        fontFamily: 'NotoSans',
+      ),
       initialRoute: '/',
       // www.google.com -> www.google.com/
       routes: {
@@ -56,6 +60,7 @@ class MyApp extends StatelessWidget {
         '/${VideoPlayerScreen.routeName}': (context) => const VideoPlayerScreen(),
         '/${ChoolCheckScreen.routeName}': (context) => const ChoolCheckScreen(),
         '/${FutureBuilderScreen.routeName}': (context) => const FutureBuilderScreen(),
+        '/${VideoCallScreen.routeName}': (context) => const VideoCallScreen(),
       },
     );
   }

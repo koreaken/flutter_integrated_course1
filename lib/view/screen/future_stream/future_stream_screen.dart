@@ -3,7 +3,7 @@ import 'dart:math';
 import 'package:flutter/material.dart';
 
 class FutureBuilderScreen extends StatefulWidget {
-  static String get routeName => 'future_builder_screen';
+  static String get routeName => 'future_builder';
 
   const FutureBuilderScreen({Key? key}) : super(key: key);
 

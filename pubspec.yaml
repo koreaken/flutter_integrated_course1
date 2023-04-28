@@ -47,6 +47,10 @@ dependencies:
   # google map
   google_maps_flutter: ^2.2.5
   geolocator: ^9.0.2
+  # agora - video call
+  agora_rtc_engine: ^6.1.0
+  # permission
+  permission_handler: ^10.2.0
 
 
 dev_dependencies:
@@ -97,6 +101,21 @@ flutter:
           weight: 500
         - asset: asset/font/Sunflower-Bold.ttf
           weight: 700
+
+    - family: NotoSans
+      fonts:
+        - asset: asset/font/NotoSansKR-Black.otf
+          weight: 900
+        - asset: asset/font/NotoSansKR-Bold.otf
+          weight: 700
+        - asset: asset/font/NotoSansKR-Medium.otf
+          weight: 500
+        - asset: asset/font/NotoSansKR-Regular.otf
+          weight: 400
+        - asset: asset/font/NotoSansKR-Light.otf
+          weight: 300
+        - asset: asset/font/NotoSansKR-Thin.otf
+          weight: 100
 
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
