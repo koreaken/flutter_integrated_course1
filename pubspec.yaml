@@ -51,7 +51,8 @@ dependencies:
   agora_rtc_engine: ^6.1.0
   # permission
   permission_handler: ^10.2.0
-
+  # .env 파일
+  flutter_config: ^2.0.0
 
 dev_dependencies:
   flutter_test:

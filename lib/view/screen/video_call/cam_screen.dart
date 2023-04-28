@@ -1,5 +1,6 @@
 import 'package:agora_rtc_engine/agora_rtc_engine.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_config/flutter_config.dart';
 import 'package:permission_handler/permission_handler.dart';
 
 import '../../../const/agora.dart';
@@ -19,6 +20,24 @@ class _CamScreenState extends State<CamScreen> {
 
   // 상대 ID
   int? otherUid;
+
+  // 앱을 실행한 후 영상통화 테스트 연결 사이트를 통해 연결을 진행하면 한번만 연결이 되고 이후 연결은 안되는 문제가 있습니다.
+  // 이 버그에대한 힌트는 위젯이 dispose 될때 engine에서 채널 나가기 및 폐기 처리가 안됐기 때문입니다.
+  @override
+  void dispose() async {
+    super.dispose();
+    // failed to call super.dispose.
+    //
+    // dispose() implementations must always call their superclass dispose() method,
+    // to ensure that all the resources used by the widget are fully released
+    //
+    // super.dispose() 위에 선언하면 위 오류 메시지처럼 Exception caught 발생하므로
+    // super.dispose() 후에 release 진행
+    if (engine != null) {
+      await engine!.leaveChannel();
+      engine!.release();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -69,6 +88,8 @@ class _CamScreenState extends State<CamScreen> {
                     if (engine != null) {
                       await engine!.leaveChannel();
                     }
+
+                    Navigator.of(context).pop();
                   },
                   child: const Text('채널 나가기'),
                 ),
@@ -106,11 +127,11 @@ class _CamScreenState extends State<CamScreen> {
       return AgoraVideoView(
         controller: VideoViewController.remote(
           rtcEngine: engine!,
-          canvas: const VideoCanvas(
-            uid: 0,
+          canvas: VideoCanvas(
+            uid: otherUid,
           ),
           connection: const RtcConnection(
-            channelId: CHANNEL_NAME,
+            channelId: AGORA_CHANNEL_NAME,
           ),
         ),
       );
@@ -128,12 +149,17 @@ class _CamScreenState extends State<CamScreen> {
       throw '카메라 또는 마이크 권한이 없습니다.';
     }
 
+    FlutterConfig.variables.forEach((key, value) {
+      print('agora key:$key, value:$value');
+    });
+
     if (engine == null) {
       engine = createAgoraRtcEngine();
 
       await engine!.initialize(
-        const RtcEngineContext(
-          appId: APP_ID,
+        RtcEngineContext(
+          appId: FlutterConfig.get('AGORA_APP_ID'),
+          // appId: AGORA_APP_ID,
         ),
       );
 
@@ -175,10 +201,11 @@ class _CamScreenState extends State<CamScreen> {
       await engine!.enableVideo();
       await engine!.startPreview();
 
-      ChannelMediaOptions options = ChannelMediaOptions();
+      ChannelMediaOptions options = const ChannelMediaOptions();
       await engine!.joinChannel(
-        token: TEMP_TOKEN,
-        channelId: CHANNEL_NAME,
+        token: FlutterConfig.get('AGORA_TEMP_TOKEN'),
+        // token: AGORA_TEMP_TOKEN,
+        channelId: AGORA_CHANNEL_NAME,
         uid: 0,
         options: options,
       );

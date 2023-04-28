@@ -17,7 +17,7 @@ class VideoCallScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: [
+          children: const [
             Expanded(
               child: _Logo(),
             ),
