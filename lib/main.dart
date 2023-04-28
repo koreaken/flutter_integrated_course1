@@ -24,6 +24,7 @@ void main() async {
   // Flutter 프레임워크가
   // 앱을 실행할 준비가 될때까지 기다린다.
   // runApp 하나만 실행하면 사용안해도 되지만, WebView 최신버전이나 db 등 사용하면 추가
+  // Required by FlutterConfig
   WidgetsFlutterBinding.ensureInitialized();
   await FlutterConfig.loadEnvVariables();
   runApp(

@@ -25,13 +25,18 @@ class _CamScreenState extends State<CamScreen> {
   // 이 버그에대한 힌트는 위젯이 dispose 될때 engine에서 채널 나가기 및 폐기 처리가 안됐기 때문입니다.
   @override
   void dispose() async {
+    super.dispose();
+    // failed to call super.dispose.
+    //
+    // dispose() implementations must always call their superclass dispose() method,
+    // to ensure that all the resources used by the widget are fully released
+    //
+    // super.dispose() 위에 선언하면 위 오류 메시지처럼 Exception caught 발생하므로
+    // super.dispose() 후에 release 진행
     if (engine != null) {
-      await engine!.leaveChannel(
-        options: LeaveChannelOptions(),
-      );
+      await engine!.leaveChannel();
       engine!.release();
     }
-    super.dispose();
   }
 
   @override
@@ -144,12 +149,17 @@ class _CamScreenState extends State<CamScreen> {
       throw '카메라 또는 마이크 권한이 없습니다.';
     }
 
+    FlutterConfig.variables.forEach((key, value) {
+      print('agora key:$key, value:$value');
+    });
+
     if (engine == null) {
       engine = createAgoraRtcEngine();
 
       await engine!.initialize(
         RtcEngineContext(
           appId: FlutterConfig.get('AGORA_APP_ID'),
+          // appId: AGORA_APP_ID,
         ),
       );
 
@@ -191,9 +201,10 @@ class _CamScreenState extends State<CamScreen> {
       await engine!.enableVideo();
       await engine!.startPreview();
 
-      ChannelMediaOptions options = ChannelMediaOptions();
+      ChannelMediaOptions options = const ChannelMediaOptions();
       await engine!.joinChannel(
         token: FlutterConfig.get('AGORA_TEMP_TOKEN'),
+        // token: AGORA_TEMP_TOKEN,
         channelId: AGORA_CHANNEL_NAME,
         uid: 0,
         options: options,

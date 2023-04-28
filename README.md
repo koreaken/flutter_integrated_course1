@@ -45,8 +45,10 @@ Flutter 3.0 & 10개 프로젝트
   + API Key 정보는 ignore 관련 숨김 배포
   + ActionBar 
 + FutureBuilder & StreamBuilder 코드 분리
++ 영화통화 앱 (video call) > FlutterConfig & .env 적용 
 + error 개선
   + video player > dispose 후 setState 사용 error 개선
+  + video call > dispose error 개선
 ----------
 ## 각 챕터 별 주요 기능
 ### 0. Home Screen
@@ -173,6 +175,7 @@ Flutter 3.0 & 10개 프로젝트
 + RTC (Real Time Communication)
 + Shadow
 + Stack
++ FlutterConfig & .env
 ----------
 ### 참조 링크
 
